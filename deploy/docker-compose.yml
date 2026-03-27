@@ -1,0 +1,13 @@
+services:
+  dinervibe-web:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    image: dinervibe-web:latest
+    container_name: dinervibe-web
+    ports:
+      - "4000:80"
+    restart: unless-stopped
+    labels:
+      - "com.vertivine.project=dinervibe"
+      - "com.vertivine.env=lan-test"
